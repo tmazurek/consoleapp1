@@ -42,6 +42,7 @@ namespace WpfApplication1
         {
             Employee emp2 = new Employee(22, "employee 2", 3300, new DateTime(2013, 01, 01), "55665566");
             this.emp2txtblock.DataContext = emp2;
+            MessageBox.Show("dodales emp2");
             
         }
     }

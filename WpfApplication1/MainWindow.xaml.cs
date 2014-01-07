@@ -21,31 +21,31 @@ namespace WpfApplication1
     public partial class MainWindow : Window
     {
 
-
+        EmployeeList ListaEmployow = new EmployeeList();
         public MainWindow()
         {
             InitializeComponent();
             //this.dataGrid1.DataContext = new object[] {new Test2() {ID=11, Name="name", Comment="comment" }};
-             Employee emp2 = new Employee(Convert.ToInt32(AgetextBox.Text) , NametextBox.Text , Convert.ToInt32(SalarytextBox.Text), Convert.ToDateTime(StartingDatetextBox.Text), PhoneNumbertextBox.Text);
-            Employee emp3 = new Employee(Convert.ToInt32(AgetextBox.Text), NametextBox.Text, Convert.ToInt32(SalarytextBox.Text), Convert.ToDateTime(StartingDatetextBox.Text), PhoneNumbertextBox.Text);
+            //Employee emp2 = new Employee(Convert.ToInt32(AgetextBox.Text) , NametextBox.Text , Convert.ToInt32(SalarytextBox.Text), Convert.ToDateTime(StartingDatetextBox.Text), PhoneNumbertextBox.Text);
+            //Employee emp3 = new Employee(Convert.ToInt32(AgetextBox.Text), NametextBox.Text, Convert.ToInt32(SalarytextBox.Text), Convert.ToDateTime(StartingDatetextBox.Text), PhoneNumbertextBox.Text);
             
-            List<Employee> ListaEmploow = new List<Employee>();
-            this.dataGrid1.DataContext = ListaEmploow;
-            ListaEmploow.Add(emp2);
-            ListaEmploow.Add(emp3);
-            
+            this.dataGrid1.DataContext = ListaEmployow;    
         }
 
 
-        private void button2_Click(object sender, RoutedEventArgs e)
+        public void button2_Click(object sender, RoutedEventArgs e)
         {
-            
-            Employee emp2 = new Employee(Convert.ToInt32(AgetextBox.Text) , NametextBox.Text , Convert.ToInt32(SalarytextBox.Text), Convert.ToDateTime(StartingDatetextBox.Text), PhoneNumbertextBox.Text);
-            Employee emp3 = new Employee(Convert.ToInt32(AgetextBox.Text), NametextBox.Text, Convert.ToInt32(SalarytextBox.Text), Convert.ToDateTime(StartingDatetextBox.Text), PhoneNumbertextBox.Text);
-            
             //this.dataGrid1.DataContext = new object[] { emp2, emp3 };
+
+            //Employee emp2 = new Employee(Convert.ToInt32(AgetextBox.Text), NametextBox.Text, Convert.ToInt32(SalarytextBox.Text), Convert.ToDateTime(StartingDatetextBox.Text), PhoneNumbertextBox.Text);
+            //Employee emp3 = new Employee(Convert.ToInt32(AgetextBox.Text), NametextBox.Text, Convert.ToInt32(SalarytextBox.Text), Convert.ToDateTime(StartingDatetextBox.Text), PhoneNumbertextBox.Text);
+            //List<Employee> ListaEmploow = new List<Employee>();
+            //ListaEmployow.Add(new Employee(Convert.ToInt32(AgetextBox.Text), NametextBox.Text, Convert.ToInt32(SalarytextBox.Text), Convert.ToDateTime(StartingDatetextBox.Text), PhoneNumbertextBox.Text));
+            ListaEmployow.Add(new Employee(Convert.ToInt32(AgetextBox.Text), NametextBox.Text, Convert.ToInt32(SalarytextBox.Text), Convert.ToDateTime(StartingDatetextBox.Text), PhoneNumbertextBox.Text));
+            //ListaEmploow.Add(emp2);
+            //ListaEmploow.Add(emp3);
             
-            this.emp2txtblock.DataContext = emp2;
+            //this.emp2txtblock.DataContext = emp2;
         }
     }
 }

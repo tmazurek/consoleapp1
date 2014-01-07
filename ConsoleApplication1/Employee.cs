@@ -2,9 +2,21 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Collections.ObjectModel;
 
 namespace ConsoleApplication1
 {
+    public class EmployeeList : ObservableCollection<Employee>
+    {
+        public EmployeeList() : base()
+        {
+            Add(new Employee(33,"tomasz", 4500, DateTime.Now,"784016969"));
+            Add(new Employee(12,"mietek", 2344, DateTime.Now,"784016969"));
+
+        }
+
+    }
+    
     public class Employee
     {
         public Employee(int age, string name, double salary, DateTime startingDate, string phonenumber)

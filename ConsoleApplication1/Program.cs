@@ -28,11 +28,13 @@ namespace ConsoleApplication1
             //emp2.Bonus(0.10);
             //emp2.TotalSalary();
             //Console.WriteLine("employee name: {0} \nAge:{1} \nMonthly Salary{2} \nStarted on:{3} \nBonus Value:{4} \nTotal Salary with Bonus:{5}", emp2.Name, emp2.Age,  emp2.Salary, emp2.StartingDate, emp2.BonusValue, emp2.TotalSalaryValue);
-            
 
-            //Warehouse newWarehouse = new Warehouse("Automedic", 1);
-            //var newItem = newWarehouse.FinAndReturnItem(1);
-            //Console.WriteLine(newItem.Name);
+
+            Warehouse newWarehouse = new Warehouse("Automedic", 111);
+
+            var newItem = newWarehouse.FinAndReturnItem(1);
+
+            Console.WriteLine("item name is : {0}, item id is: {1} ",newItem.Name , newItem.ID);
 
             Console.ReadLine();
         }

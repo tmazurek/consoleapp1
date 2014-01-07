@@ -30,19 +30,12 @@ namespace WpfApplication1
             
         }
 
-        private void button1_Click(object sender, RoutedEventArgs e)
-        {
-            
-            Employee emp1 = new Employee(22, "tomasz", 4500, new DateTime(2012, 01, 01), "784016969");
-            this.emp1txtblock.DataContext = emp1;
-            //this.textBlock1.Text = emp1.Name;
-        }
 
         private void button2_Click(object sender, RoutedEventArgs e)
         {
-            Employee emp2 = new Employee(22, "employee 2", 3300, new DateTime(2013, 01, 01), "55665566");
+            Employee emp2 = new Employee(Convert.ToInt32(AgetextBox.Text) , NametextBox.Text , Convert.ToInt32(SalarytextBox.Text), Convert.ToDateTime(StartingDatetextBox.Text), PhoneNumbertextBox.Text);
             this.emp2txtblock.DataContext = emp2;
-            MessageBox.Show("dodales emp2");
+            
             
         }
     }

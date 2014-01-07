@@ -20,23 +20,32 @@ namespace WpfApplication1
     /// </summary>
     public partial class MainWindow : Window
     {
-        
-        
+
+
         public MainWindow()
         {
             InitializeComponent();
+            //this.dataGrid1.DataContext = new object[] {new Test2() {ID=11, Name="name", Comment="comment" }};
+             Employee emp2 = new Employee(Convert.ToInt32(AgetextBox.Text) , NametextBox.Text , Convert.ToInt32(SalarytextBox.Text), Convert.ToDateTime(StartingDatetextBox.Text), PhoneNumbertextBox.Text);
+            Employee emp3 = new Employee(Convert.ToInt32(AgetextBox.Text), NametextBox.Text, Convert.ToInt32(SalarytextBox.Text), Convert.ToDateTime(StartingDatetextBox.Text), PhoneNumbertextBox.Text);
             
-            
+            List<Employee> ListaEmploow = new List<Employee>();
+            this.dataGrid1.DataContext = ListaEmploow;
+            ListaEmploow.Add(emp2);
+            ListaEmploow.Add(emp3);
             
         }
 
 
         private void button2_Click(object sender, RoutedEventArgs e)
         {
+            
             Employee emp2 = new Employee(Convert.ToInt32(AgetextBox.Text) , NametextBox.Text , Convert.ToInt32(SalarytextBox.Text), Convert.ToDateTime(StartingDatetextBox.Text), PhoneNumbertextBox.Text);
+            Employee emp3 = new Employee(Convert.ToInt32(AgetextBox.Text), NametextBox.Text, Convert.ToInt32(SalarytextBox.Text), Convert.ToDateTime(StartingDatetextBox.Text), PhoneNumbertextBox.Text);
+            
+            //this.dataGrid1.DataContext = new object[] { emp2, emp3 };
+            
             this.emp2txtblock.DataContext = emp2;
-            
-            
         }
     }
 }

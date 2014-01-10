@@ -42,6 +42,7 @@ namespace WpfApplication1
             //List<Employee> ListaEmploow = new List<Employee>();
             //ListaEmployow.Add(new Employee(Convert.ToInt32(AgetextBox.Text), NametextBox.Text, Convert.ToInt32(SalarytextBox.Text), Convert.ToDateTime(StartingDatetextBox.Text), PhoneNumbertextBox.Text));
             ListaEmployow.Add(new Employee(Convert.ToInt32(AgetextBox.Text), NametextBox.Text, Convert.ToInt32(SalarytextBox.Text), Convert.ToDateTime(StartingDatetextBox.Text), PhoneNumbertextBox.Text));
+            
             //ListaEmploow.Add(emp2);
             //ListaEmploow.Add(emp3);
             

@@ -36,13 +36,27 @@ namespace ConsoleApplication1
 
             //Console.WriteLine("item name is : {0}, item id is: {1} ",newItem.Name , newItem.ID);
 
-            var myComputer = new Computer();
-            myComputer.ID = 101;
-            Item myNewComputer = new Computer();
-            myNewComputer.ID = 102;
-            Computer myNewComputer2 = myNewComputer as Computer;
-            myNewComputer2.Name = "dupa";
-            myNewComputer2.Purchase();
+            //var myComputer = new Computer();
+            //myComputer.ID = 101;
+            //Item myNewComputer = new Computer();
+            //myNewComputer.ID = 102;
+            //Computer myNewComputer2 = myNewComputer as Computer;
+            //myNewComputer2.Name = "new computer 2";
+            //myNewComputer2.CPUType = "dual core";
+            //myNewComputer2.SerialNumber = "221212";
+            //myNewComputer2.Purchase();
+
+            //Peripheral myNewPeripheral = new Peripheral();
+            //myNewPeripheral.Name = "new peripheral";
+            //myNewPeripheral.SerialNumber = "23123555";
+            //myNewPeripheral.Purchase();
+
+
+            //Item someItem = new Item();
+            //Item newitem = someItem.GetItem();
+            //static usage
+            Item newItem = Item.GetItem();
+            Console.WriteLine(newItem.ID + newItem.Name); 
 
             Console.ReadLine();
         }

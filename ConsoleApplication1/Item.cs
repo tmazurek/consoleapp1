@@ -11,9 +11,16 @@ namespace ConsoleApplication1
         public string Name { get; set; }
         public virtual void Purchase()
         {
-            Console.WriteLine("Purchasing {0}", Name);
+            Console.WriteLine("\nPurchasing {0}", Name);
+        }
+
+        public static Item GetItem()
+        {
+            var newItem = new Item() {ID=1, Name="item1" };
+            return newItem;
         }
     }
+    
     class Software : Item
     {
         public string ISBN { get; set; }
@@ -22,6 +29,11 @@ namespace ConsoleApplication1
     class Hardware : Item
     {
         public string SerialNumber { get; set; }
+        public override void Purchase()
+        {
+            base.Purchase();
+            Console.WriteLine("serial number is:{0}", SerialNumber);
+        }
     
     }
 
@@ -29,11 +41,21 @@ namespace ConsoleApplication1
     {
         public string CPUType { get; set; }
         public string Disks { get; set; }
+        public override void Purchase()
+        {
+            base.Purchase();
+            Console.WriteLine("my computers cpu type is {0}",CPUType);
+        }
 
     }
     class Peripheral : Hardware
     {
-        public string Description { get; set; } 
+        public string Description { get; set; }
+        public override void Purchase()
+        {
+            base.Purchase();
+            Console.WriteLine("peripheral description:{0}",Description);
+        }
     
     }
 }

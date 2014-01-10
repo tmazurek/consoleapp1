@@ -67,6 +67,6 @@ namespace ConsoleApplication1
             TotalSalaryValue = iloscMiesiecyRounded * Salary;
         }
 
-
+        
     }
 }

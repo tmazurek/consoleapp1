@@ -12,7 +12,6 @@ namespace ConsoleApplication1
         {
             Add(new Employee(33,"tomasz", 4500, DateTime.Now,"784016969"));
             Add(new Employee(12,"mietek", 2344, DateTime.Now,"784016969"));
-
         }
 
     }

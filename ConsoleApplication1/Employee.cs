@@ -3,69 +3,105 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
 
 namespace ConsoleApplication1
 {
     public class EmployeeList : ObservableCollection<Employee>
     {
-        public EmployeeList() : base()
+    }
+
+    public class Employee : INotifyPropertyChanged
+    {
+
+
+        private int age;
+        public int Age
         {
-            Add(new Employee(33,"tomasz", 4500, DateTime.Now,"784016969"));
-            Add(new Employee(12,"mietek", 2344, DateTime.Now,"784016969"));
+
+            get { return age; }
+            set
+            {
+                age = value;
+                OnPropertyChanged();
+            }
         }
 
-    }
-    
-    public class Employee
-    {
-        public Employee(int age, string name, double salary, DateTime startingDate, string phonenumber)
+
+        string name;
+        public string Name
         {
-            Age = age;
-            Name = name;
-            Salary = salary;
-            StartingDate = startingDate;
-            PhoneNumber = phonenumber;
-            //BonusValue = bonusValue;
-            //TotalSalaryValue = totalsalaryvalue;
+            get { return name; }
+            set
+            {
+                name = value;
+                OnPropertyChanged();
+            }
         }
-        public Employee()
-        { 
+
+        int salary;
+        public int Salary
+        {
+            get { return salary; }
+            set
+            {
+                salary = value;
+                OnPropertyChanged();
+            }
         }
-        
-        //private int age;
-        //public int Age
-        //{
-        //    get { return age;}
-        //    set{age =  value;}
-        //}
-        public int Age { get; set; }
-        public string Name { get; set; }
-        public double Salary { get; set; }
-        public DateTime StartingDate { get; set; }
-        public string PhoneNumber { get; set; }
+
+        DateTime startingDate;
+        public DateTime StartingDate
+        {
+            get { return startingDate; }
+            set
+            {
+                startingDate = value;
+                OnPropertyChanged();
+
+            }
+        }
+
+        string phoneNumber;
+        public string PhoneNumber
+        {
+            get { return phoneNumber; }
+            set
+            {
+                phoneNumber = value;
+                OnPropertyChanged();
+            }
+        }
+
         public double BonusValue { get; set; }
         public double TotalSalaryValue { get; set; }
-        
-        public void Bonus(double bonusPercent)
-        {
-            BonusValue = bonusPercent;
-            Salary += Salary * bonusPercent;
-        }
-        public void TotalSalary()
-        {
 
-            //int currentMonth = (DateTime.Now).Month;
-            //int startingMonth = StartingDate.Month;
-            //int currentYear = DateTime.Now.Year;
-            //int startingYear = StartingDate.Year;
-            //int iloscMiesiecy = (currentYear - startingYear) * 12 + currentMonth - startingMonth;
 
-            TimeSpan t = DateTime.Now - StartingDate;
-            double iloscMiesiecy = (t.TotalDays / 365.25) * 12;
-            double iloscMiesiecyRounded = Math.Floor(iloscMiesiecy);
-            TotalSalaryValue = iloscMiesiecyRounded * Salary;
+        public static Employee getEmployee()
+        {
+            var emp = new Employee() { Age = 33, Name = "tomek", Salary = 44233, StartingDate = DateTime.Now, PhoneNumber = "343432444" };
+            return emp;
         }
 
+        public static ObservableCollection<Employee> getEmployees()
+        {
+            var employees = new ObservableCollection<Employee>();
+            employees.Add(new Employee { Age = 33, Name = "tomek", Salary = 44233, StartingDate = DateTime.Now, PhoneNumber = "343432444" });
+            employees.Add(new Employee { Age = 33, Name = "tomek", Salary = 44233, StartingDate = DateTime.Now, PhoneNumber = "343432444" });
+            employees.Add(new Employee { Age = 33, Name = "tomek", Salary = 44233, StartingDate = DateTime.Now, PhoneNumber = "343432444" });
+            employees.Add(new Employee { Age = 33, Name = "tomek", Salary = 44233, StartingDate = DateTime.Now, PhoneNumber = "343432444" });
+            return employees;
+        }
 
+        public event PropertyChangedEventHandler PropertyChanged;
+        private void OnPropertyChanged([CallerMemberName] string caller = "")
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(caller));
+            }
+
+        }
     }
 }

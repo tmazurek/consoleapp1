@@ -1,0 +1,12 @@
+﻿<Window x:Class="elementBinding.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <StackPanel HorizontalAlignment="Left" Height="300" Margin="10,10,0,0" VerticalAlignment="Top" Width="361">
+            <Slider x:Name="slider" Margin="0,0,52,0"/>
+            <TextBlock TextWrapping="Wrap" Text="{Binding Value, ElementName=slider}"/>
+        </StackPanel>
+
+    </Grid>
+</Window>

@@ -3,12 +3,13 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:src="clr-namespace:WpfApplication1"
         xmlns:src1="clr-namespace:ConsoleApplication1;assembly=ConsoleApplication1"
-        Title="MainWindow" Height="396" Width="564">
-    <StackPanel>
-        <StackPanel.Resources>
-            <src1:Employee x:Key="myDataSource"/>
-            
-        </StackPanel.Resources>
+        Title="MainWindow" Height="396" Width="auto" >
+    <Window.Resources>
+        <src:DateConverter x:Key="DateConv"/>
+    </Window.Resources>
+    <StackPanel Orientation="Horizontal">
+        <StackPanel>
+
         <Button Content="Employee2" Height="23" HorizontalAlignment="Left" Name="button2" VerticalAlignment="Top" Width="75" Click="button2_Click" />
         <TextBlock Height="79" HorizontalAlignment="Left"  Name="emp2txtblock"  VerticalAlignment="Top" Width="247" TextWrapping="Wrap">
             <TextBlock.Text>
@@ -21,13 +22,62 @@
                 </MultiBinding>
             </TextBlock.Text>
         </TextBlock>
-        <TextBox Height="23" HorizontalAlignment="Left" Name="AgetextBox" VerticalAlignment="Top" Width="247" Text="33" />
-        <TextBox Height="23" HorizontalAlignment="Left" Name="NametextBox" VerticalAlignment="Top" Width="247" Text="Name" />
-        <TextBox Height="23" HorizontalAlignment="Left"  Name="SalarytextBox" VerticalAlignment="Top" Width="247" Text="4555" />
-        <TextBox Height="23" HorizontalAlignment="Left"  Name="StartingDatetextBox" VerticalAlignment="Top" Width="247" Text="2012/12/12" />
-        <TextBox Height="23" HorizontalAlignment="Left"  Name="PhoneNumbertextBox" VerticalAlignment="Top" Width="247" Text="784016969" />
-        <DataGrid  AutoGenerateColumns="True" Height="124" Name="dataGrid1" Width="auto" ItemsSource="{Binding}">
+            <TextBox Height="23" HorizontalAlignment="Left"  Name="AgetextBox" VerticalAlignment="Top" Width="247" Text="{Binding Age, Mode=TwoWay}" />
+        <TextBox Height="23" HorizontalAlignment="Left" Name="NametextBox" VerticalAlignment="Top" Width="247" Text="{Binding Name}" />
+        <TextBox Height="23" HorizontalAlignment="Left"  Name="SalarytextBox" VerticalAlignment="Top" Width="247" Text="{Binding Salary}" />
+            <TextBox Height="23" HorizontalAlignment="Left"  Name="StartingDatetextBox" VerticalAlignment="Top" Width="247" Text="{Binding StartingDate}" />
+            <TextBox Height="23" HorizontalAlignment="Left"  Name="PhoneNumbertextBox" VerticalAlignment="Top" Width="247" Text="{Binding PhoneNumber}" />
+        <DataGrid  AutoGenerateColumns="True" Height="137" Name="dataGrid1" Width="auto" ItemsSource="{Binding}">
 
         </DataGrid>
+        </StackPanel>
+        <StackPanel Name="EmployeeDisplayStackpanel" Orientation="Horizontal">
+            <StackPanel  Margin="10 0 10 0">
+                
+                
+                
+                
+                
+            </StackPanel>
+            <StackPanel >
+                <TextBlock Text="Name"></TextBlock>
+                <TextBox Text="{Binding Name}"></TextBox>
+                <TextBlock Text="Age"></TextBlock>
+                <TextBox Text="{Binding Age}"></TextBox>
+                <TextBlock Text="StartDate"></TextBlock>
+                <Calendar SelectedDate="{Binding StartingDate}" DisplayDate="{Binding StartingDate}"></Calendar>
+                <TextBlock Text="Salary"></TextBlock>
+                <TextBox Text="{Binding Salary}"></TextBox>
+                <TextBlock Text="Phone"></TextBlock>
+                <TextBox Text="{Binding PhoneNumber}"></TextBox>
+            </StackPanel>
+            <StackPanel  Margin="10 0 10 0">
+                <TextBlock Text="Name"></TextBlock>
+                <TextBlock Text="Age"></TextBlock>
+                <TextBlock Text="Salary"></TextBlock>
+                <TextBlock Text="StartDate"></TextBlock>
+                <TextBlock Text="Phone"></TextBlock>
+            </StackPanel>
+            <StackPanel >
+                <TextBlock Text="{Binding Name}"></TextBlock>
+                <TextBlock Text="{Binding Age}"></TextBlock>
+                <TextBlock Text="{Binding Salary}"></TextBlock>
+                <TextBlock Text="{Binding StartingDate, Converter={StaticResource DateConv}}"></TextBlock>
+                <TextBlock Text="{Binding PhoneNumber}"></TextBlock>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel MinWidth="100" Background="#FFCFCFCF" >
+            <ListView Name="ListViewTest" ItemsSource="{Binding}"> 
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{Binding Age}"></TextBlock>
+                            <TextBlock Text="{Binding Name}"></TextBlock>
+                            <TextBlock Text="{Binding Salary}"></TextBlock>
+                        </StackPanel> 
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackPanel>
     </StackPanel>
 </Window>

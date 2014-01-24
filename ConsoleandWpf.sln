@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfApplication1", "WpfAppli
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "elementBinding", "elementBinding\elementBinding.csproj", "{5B84BEB5-F2D1-42D9-B5EB-32C6DDFF848A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVVMdemo", "MVVMdemo\MVVMdemo.csproj", "{0E3569CE-C9B0-44AC-B2BC-B89767636E83}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -49,6 +51,16 @@ Global
 		{5B84BEB5-F2D1-42D9-B5EB-32C6DDFF848A}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{5B84BEB5-F2D1-42D9-B5EB-32C6DDFF848A}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{5B84BEB5-F2D1-42D9-B5EB-32C6DDFF848A}.Release|x86.ActiveCfg = Release|Any CPU
+		{0E3569CE-C9B0-44AC-B2BC-B89767636E83}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E3569CE-C9B0-44AC-B2BC-B89767636E83}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E3569CE-C9B0-44AC-B2BC-B89767636E83}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{0E3569CE-C9B0-44AC-B2BC-B89767636E83}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{0E3569CE-C9B0-44AC-B2BC-B89767636E83}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{0E3569CE-C9B0-44AC-B2BC-B89767636E83}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E3569CE-C9B0-44AC-B2BC-B89767636E83}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E3569CE-C9B0-44AC-B2BC-B89767636E83}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{0E3569CE-C9B0-44AC-B2BC-B89767636E83}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{0E3569CE-C9B0-44AC-B2BC-B89767636E83}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

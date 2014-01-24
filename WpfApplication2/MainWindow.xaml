@@ -1,0 +1,14 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:WpfApplication2" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="WpfApplication2.MainWindow"
+        Title="MainWindow" Height="350" Width="525">
+	<Window.Resources>
+		<local:MainWindowViewModel x:Key="MainWindowViewModelDataSource" d:IsDataSource="True"/>
+	</Window.Resources>
+	<Grid DataContext="{Binding Source={StaticResource MainWindowViewModelDataSource}}">
+        <TextBlock HorizontalAlignment="Left" Margin="194,102,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="{Binding MyDict[First]}"/>
+        <TextBlock HorizontalAlignment="Left" Margin="194,123,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="{Binding MyDict[Second]}"/>
+
+	</Grid>
+</Window>

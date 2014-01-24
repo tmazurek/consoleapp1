@@ -26,6 +26,7 @@ namespace WpfApplication1
         List<Employee> NowaLista = new List<Employee>();
         ObservableCollection<Employee> nowaObser = new ObservableCollection<Employee>();
         
+        
         public MainWindow()
         {
             InitializeComponent();

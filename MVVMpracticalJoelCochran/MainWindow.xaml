@@ -1,0 +1,27 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:ViewModels="clr-namespace:MVVMpracticalJoelCochran.ViewModels" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="MVVMpracticalJoelCochran.MainWindow"
+        Title="MainWindow" Height="350" Width="525">
+    <Window.Resources>
+        <ViewModels:MainWindowsViewModel x:Key="MainWindowsViewModelDataSource" d:IsDataSource="True"/>
+    </Window.Resources>
+    <Grid DataContext="{Binding Source={StaticResource MainWindowsViewModelDataSource}}">
+        <StackPanel Background="#FF7E7E7E">
+            <StackPanel Orientation="Horizontal">
+            	<Label Content="Label"/>
+            	<TextBox Height="23" TextWrapping="Wrap" Width="335" Text="{Binding SearchOwnerName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+            	<Button Content="Button" Width="75"/>
+            </StackPanel>
+            <StackPanel>
+                <ListView Height="168" ItemsSource="{Binding RealEstateRecords}">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn/>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>

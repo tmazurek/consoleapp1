@@ -55,10 +55,18 @@ namespace ConsoleApplication1
             //Item someItem = new Item();
             //Item newitem = someItem.GetItem();
             //static usage
-            Item newItem = Item.GetItem();
-            Console.WriteLine(newItem.ID + newItem.Name); 
-
-            Console.ReadLine();
+            var ItemArray = new Item[10];
+            Random r = new Random();
+            for (int i = 0; i < ItemArray.Length; i++ )
+            {
+                ItemArray[i] = new Item() { ID = i, Name = r.Next(500).ToString() };
+            }
+            
+            foreach(Item i in ItemArray)
+            {
+                Console.WriteLine("items: {0}, name: {1}", i.ID, i.Name);
+            }
+                Console.ReadLine();
         }
 
     }
